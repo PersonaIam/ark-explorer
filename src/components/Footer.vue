@@ -1,10 +1,10 @@
 <template>
-  <footer class="max-w-2xl mx-auto px-5 md:px-10 py-8 text-theme-text-tertiary flex flex-col lg:flex-row flex-wrap justify-between items-center">
-    <div class="mb-4 lg:mb-0">
-      <span class="block md:inline-block mb-4 md:mb-0 text-center">&copy; ARK.io | {{ year }}. {{ $t("All rights reserved") }}</span> <div class="block md:inline-block"><span class="hidden md:inline-block"> | </span> <span>{{ $t("Version") }}: <a :href="versionLink" target="_blank">{{ version }}</a> | {{ $t("Date") }}: {{ date }}</span></div>
+  <footer class="max-w-2xl mx-auto px-5 md:px-10 py-8 text-theme-text-tertiary flex flex-wrap justify-between items-center">
+    <div>
+      &copy; Persona.im | {{ year }}. {{ $t("All rights reserved") }} <span class="hidden md:inline-block"> | Version: {{ version }} | Date: {{ date }}</span>
     </div>
-    <div class="text-center">
-      <a href="https://www.facebook.com/arkecosystem" target="_blank">
+    <div>
+      <a href="https://www.facebook.com/personablockchain" target="_blank">
         <svg
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,7 @@
         </svg>
       </a>
 
-      <a href="https://twitter.com/ArkEcosystem" target="_blank">
+      <a href="https://twitter.com/PersonaIam" target="_blank">
         <svg
           viewBox="0 0 24 24"
           class="m-2"
@@ -26,6 +26,7 @@
         </svg>
       </a>
 
+<<<<<<< HEAD
       <a href="https://www.youtube.com/channel/UCpc2k6zOOutGT9y56urDClg" target="_blank">
         <svg
         viewBox="0 0 24 24"
@@ -60,6 +61,9 @@
       </a>
 
       <a href="https://github.com/ArkEcosystem" target="_blank">
+=======
+      <a href="https://github.com/PersonaIam" target="_blank">
+>>>>>>> 5/18/2018
         <svg
           viewBox="0 0 24 24"
           class="m-2"
@@ -70,6 +74,7 @@
         </svg>
       </a>
 
+<<<<<<< HEAD
       <a href="https://bitcointalk.org/index.php?topic=1649695.0" target="_blank">
         <svg
           viewBox="0 0 24 24"
@@ -82,6 +87,9 @@
       </a>
 
       <a href="https://ark.io/slack" target="_blank">
+=======
+      <a href="https://personablockchain.slack.com" target="_blank">
+>>>>>>> 5/18/2018
         <svg
           viewBox="0 0 24 24"
           class="m-2"
@@ -103,7 +111,7 @@
         </svg>
       </a>
 
-      <a href="https://steemit.com/@arkecosystem" target="_blank">
+      <a href="https://t.me/personablockchain" target="_blank">
         <svg
           viewBox="0 0 24 24"
           class="m-2"
@@ -120,8 +128,13 @@
           class="m-2"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
+<<<<<<< HEAD
           width="16px" height="16px">
           <path fill-rule="evenodd" fill="currentColor" d="M2.846 6.36c.03-.295-.083-.586-.303-.784l-2.24-2.7v-.403H7.26l5.378 11.795 4.728-11.795H24v.403l-1.917 1.837c-.165.126-.247.333-.213.538v13.5c-.034.204.048.41.213.537l1.87 1.837v.403h-9.41v-.403l1.937-1.882c.19-.19.19-.246.19-.538V7.794l-5.39 13.688h-.727L4.278 7.794v9.174c-.052.386.076.774.347 1.053l2.52 3.06v.402H0v-.403l2.52-3.06c.27-.278.39-.67.326-1.052V6.36z" />
+=======
+          width="14px" height="13px">
+          <path fill-rule="evenodd"  fill="currentColor" d="M0.247,5.753 L3.472,6.939 L4.722,10.892 C4.801,11.145 5.116,11.239 5.324,11.071 L7.123,9.628 C7.311,9.476 7.580,9.469 7.777,9.610 L11.020,11.928 C11.243,12.088 11.560,11.967 11.615,11.701 L13.991,0.450 C14.052,0.160 13.763,-0.082 13.482,0.025 L0.243,5.053 C-0.084,5.177 -0.081,5.632 0.247,5.753 ZM4.520,6.308 L10.825,2.485 C10.938,2.416 11.054,2.567 10.957,2.656 L5.754,7.418 C5.571,7.585 5.453,7.809 5.420,8.053 L5.242,9.346 C5.219,9.519 4.973,9.536 4.925,9.369 L4.243,7.011 C4.164,6.742 4.279,6.455 4.520,6.308 Z"/>
+>>>>>>> 5/18/2018
         </svg>
       </a>
 

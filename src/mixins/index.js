@@ -23,10 +23,10 @@ const methods = {
     return moment()
       .utc()
       .set({
-        year: 2017,
-        month: 2,
-        date: 21,
-        hour: 13,
+        year: 2018,
+        month: 1,
+        date: 1,
+        hour: 0,
         minute: 0,
         second: 0,
       })
@@ -35,23 +35,21 @@ const methods = {
       .format('DD.MM.YYYY HH:mm:ss')
   },
 
-  readableTimestampAgo(time, compareTime) {
-    const getTime = function (t) {
-      return moment()
-        .utc()
-        .set({
-          year: 2017,
-          month: 2,
-          date: 21,
-          hour: 13,
-          minute: 0,
-          second: 0,
-        })
-        .add(t, 'seconds')
-    }
 
-    const momentTime = getTime(time)
-    return typeof compareTime !== 'undefined' ? momentTime.from(getTime(compareTime)) : momentTime.fromNow()
+  readableTimestampAgo(value) {
+    return moment()
+      .utc()
+      .set({
+        year: 2018,
+        month: 1,
+        date: 1,
+        hour: 0,
+        minute: 0,
+        second: 0,
+      })
+      .add(value, 'seconds')
+      .fromNow()
+
   },
 
   truncate(value, length = 13, truncateWhere = 'middle') {

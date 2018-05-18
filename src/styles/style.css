@@ -357,5 +357,5 @@ thead th {
 }
 
 .menu-button:hover {
-  @apply .border-red
+  @apply .border-blue
 }

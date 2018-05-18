@@ -69,7 +69,7 @@ class ForgingService {
   }
 
   epochStamp(d) {
-    return new Date((((Date.UTC(2017, 2, 21, 13, 0, 0, 0) / 1000) + d) * 1000))
+    return new Date((((Date.UTC(2018, 1, 1, 0, 0, 0, 0) / 1000) + d) * 1000))
   }
 
   round(height) {
