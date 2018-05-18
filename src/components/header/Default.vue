@@ -4,8 +4,8 @@
       <button
         @click="$store.dispatch('ui/setMenuVisible', !menuVisible)"
         :class="[
-          menuVisible ? 'border-red' : 'border-transparent',
-          'px-2 sm:px-4 py-3 md:py-6 flex-none flex items-center border-b-2 hover:border-red text-theme-text-secondary'
+          menuVisible ? 'border-blue' : 'border-transparent',
+          'px-2 sm:px-4 py-3 md:py-6 flex-none flex items-center border-b-2 hover:border-blue text-theme-text-secondary'
         ]">
         <!-- Inline this SVG so we can change color dynamically -->
         <svg
