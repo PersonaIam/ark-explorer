@@ -30,7 +30,7 @@
       <div class="list-row-border-b">
         <div>{{ $t("Amount (token)", {token: networkToken()}) }}</div>
         <div>
-          <transaction-amount :transaction="transaction" :type="row.type"></transaction-amount>
+          <transaction-amount :transaction="transaction"></transaction-amount>
         </div>
 
         <div class="list-row">
