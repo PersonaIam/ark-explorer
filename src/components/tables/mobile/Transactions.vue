@@ -27,11 +27,10 @@
           <div class="truncate">{{ transaction.vendorField }}</div>
         </div>
 
-        <div class="list-row-border-b">
-          <div>{{ $t("Amount (token)", {token: networkToken()}) }}</div>
-          <div>
-            <transaction-amount :transaction="transaction" :type="transaction.type"></transaction-amount>
-          </div>
+      <div class="list-row-border-b">
+        <div>{{ $t("Amount (token)", {token: networkToken()}) }}</div>
+        <div>
+          <transaction-amount :transaction="transaction" :type="row.type"></transaction-amount>
         </div>
 
         <div class="list-row">
