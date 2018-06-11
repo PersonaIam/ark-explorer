@@ -2,7 +2,7 @@
   <div class="absolute pin px-4 md:px-8 hidden sm:flex bg-theme-nav-background xl:rounded-r-md">
     <button
       @click="$store.dispatch('ui/setMenuVisible', false)"
-      class='px-4 py-3 md:py-6 flex-none flex items-center border-b-2 border-transparent hover:border-red text-theme-text-secondary'>
+      class='px-4 py-3 md:py-6 flex-none flex items-center border-b-2 border-transparent hover:border-blue text-theme-text-secondary'>
       <!-- Inline this SVG so we can change color dynamically -->
       <svg
         class="flex-none mr-3 fill-current"
