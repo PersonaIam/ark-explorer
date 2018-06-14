@@ -1,4 +1,4 @@
-# PersonaIm Explorer 3.0
+# PersonaIam Explorer 3.0
 
 > Designed and developed from the ground-up, using lean & fast developmental frameworks (Tailwind CSS & Vue.JS).
 
