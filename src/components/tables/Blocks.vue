@@ -1,5 +1,6 @@
 <template>
-  <table-component :data="blocks" sort-by="height" sort-order="desc" :show-filter="false" :show-caption="false" table-class="w-full">
+  <loader :data="blocks">
+    <table-component v-if="blocks && blocks.length > 0" :data="blocks" sort-by="height" sort-order="desc" :show-filter="false" :show-caption="false" table-class="w-full">
     <table-column show="id" :label="$t('ID')" header-class="left-header-start-cell" cell-class="left-start-cell">
       <template slot-scope="row">
         <link-block :id="row.id"></link-block>
@@ -12,7 +13,7 @@
       </template>
     </table-column>
 
-    <table-column show="timestamp" :label="$t('Timestamp')" header-class="left-header-cell" cell-class="left-cell">
+    <table-column show="timestamp" :label="$t('Timestamp')" header-class="left-header-cell" cell-class="left-cell whitespace-no-wrap">
       <template slot-scope="row">
         {{ readableTimestamp(row.timestamp) }}
       </template>
@@ -42,13 +43,17 @@
       </template>
     </table-column>
   </table-component>
+    <div v-else class="px-5 md:px-10">
+      <span>{{ $t("No Results") }}</span>
+    </div>
+  </loader>
 </template>
 
 <script type="text/ecmascript-6">
 export default {
   props: {
     blocks: {
-      type: Array,
+      //type: Array or null,
       required: true,
     },
   }

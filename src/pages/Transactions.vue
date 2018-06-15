@@ -8,7 +8,7 @@
       <div class="sm:hidden">
         <table-transactions-mobile :transactions="transactions"></table-transactions-mobile>
       </div>
-      <paginator :start="+this.$route.params.page"></paginator>
+      <paginator v-if="transactions" :start="+this.$route.params.page"></paginator>
     </section>
   </div>
 </template>
@@ -17,25 +17,23 @@
 import TransactionService from '@/services/transaction'
 
 export default {
-  data: () => ({ transactions: [] }),
+  data: () => ({ transactions: null }),
 
   created() {
     this.$on('paginatorChanged', page => this.changePage(page))
   },
 
-  beforeRouteEnter (to, from, next) {
-    TransactionService
-      .paginate(to.params.page)
-      .then(response => next(vm => vm.setTransactions(response)))
+  async beforeRouteEnter (to, from, next) {
+    const response = await TransactionService.paginate(to.params.page)
+    next(vm => vm.setTransactions(response))
   },
 
-  beforeRouteUpdate (to, from, next) {
-    this.transactions = []
+  async beforeRouteUpdate (to, from, next) {
+    this.transactions = null
 
-    TransactionService
-      .paginate(to.params.page)
-      .then(response => this.setTransactions(response))
-      .then(() => next())
+    const response = await TransactionService.paginate(to.params.page)
+    this.setTransactions(response)
+    next()
   },
 
   methods: {

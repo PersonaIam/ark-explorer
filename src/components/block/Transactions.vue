@@ -1,12 +1,17 @@
 <template>
-  <div v-if="transactions.length > 0">
-    <h2 class="text-2xl mb-5 md:mb-6 px-10 sm:hidden text-theme-text-primary">{{ $t("Transactions") }}</h2>
+  <div v-if="transactions && transactions.length > 0">
+    <h2 class="text-2xl mb-5 md:mb-6 px-5 sm:hidden text-theme-text-primary">{{ $t("Transactions") }}</h2>
     <section class="page-section py-8">
       <div class="hidden sm:block">
         <table-transactions :transactions="transactions"></table-transactions>
       </div>
       <div class="sm:hidden">
         <table-transactions-mobile :transactions="transactions"></table-transactions-mobile>
+      </div>
+      <div class="mx-10 mt-10 flex flex-wrap" v-if="transactions.length >= 25">
+        <router-link :to="{ name: 'block-transactions', params: { block: this.block.id, page: 2 } }" tag="button" class="show-more-button">
+          {{ $t("Show more") }}
+        </router-link>
       </div>
     </section>
   </div>
@@ -23,7 +28,7 @@ export default {
     }
   },
 
-  data: () => ({ transactions: [] }),
+  data: () => ({ transactions: null }),
 
   watch: {
     block() {
@@ -32,12 +37,11 @@ export default {
   },
 
   methods: {
-    getTransactions () {
+    async getTransactions () {
       if (!this.block.id) return
 
-      TransactionService
-        .findByBlock(this.block.id)
-        .then(response => this.transactions = response)
+      const response = await TransactionService.findByBlock(this.block.id)
+      this.transactions = response
     }
   }
 }

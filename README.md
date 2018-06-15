@@ -38,6 +38,13 @@ npm run build:devnet
 npm run build --network my-custom-network
 ```
 
+#### 3.4 Run Express Server
+
+You can run the explorer as an express server. This makes it a little more light-weight but not needing to have services such as apache or nginx.
+
+```bash
+EXPLORER_HOST="127.0.0.1" EXPLORER_PORT="4200" node express-server.js
+
 If you wish to remove the `/#/` from your URLs you can follow those steps https://router.vuejs.org/en/essentials/history-mode.html.
 
 ### 4.1 Build

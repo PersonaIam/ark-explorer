@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="text-2xl mb-5 md:mb-6 px-10 sm:hidden text-theme-text-primary">{{ $t("Transactions") }}</h2>
+    <h2 class="text-2xl mb-5 md:mb-6 px-5 sm:hidden text-theme-text-primary">{{ $t("Transactions") }}</h2>
     <section class="page-section py-8">
       <nav class="mx-5 md:mx-10 mb-8 border-b flex items-end">
         <div
@@ -28,13 +28,13 @@
           {{ $t("Received") }}
         </div>
       </nav>
-      <div class="hidden sm:block" v-if="transactions.length > 0">
+      <div class="hidden sm:block">
         <table-transactions-detail :transactions="transactions"></table-transactions-detail>
       </div>
-      <div class="sm:hidden" v-if="transactions.length > 0">
+      <div class="sm:hidden">
         <table-transactions-detail-mobile :transactions="transactions"></table-transactions-detail-mobile>
       </div>
-      <div class="mx-10 mt-10 flex flex-wrap" v-if="transactions.length >= 25">
+      <div class="mx-10 mt-10 flex flex-wrap" v-if="transactions && transactions.length >= 25">
         <router-link :to="{ name: 'wallet-transactions', params: { address: this.wallet.address, type, page: 2 } }" tag="button" class="show-more-button">
           {{ $t("Show more") }}
         </router-link>
@@ -56,7 +56,7 @@ export default {
   },
 
   data: () => ({
-    transactions: [],
+    transactions: null,
     type: 'all',
   }),
 
@@ -70,11 +70,15 @@ export default {
   },
 
   methods: {
-    getTransactions() {
-      TransactionService[`${this.type}ByAddress`](
-        this.wallet.address,
-        this.page
-      ).then(transactions => (this.transactions = transactions))
+    async getTransactions() {
+      this.transactions = null
+      if (this.wallet.address !== undefined) {
+        const transactions = await TransactionService[`${this.type}ByAddress`](
+          this.wallet.address,
+          this.page
+        )
+        this.transactions = transactions
+      }
     },
   },
 }

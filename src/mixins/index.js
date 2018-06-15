@@ -5,7 +5,7 @@ import store from '@/store'
 const methods = {
   isDelegateByAddress(address) {
     return (
-      this.$store.getters['delegates/delegates'].filter(
+      store.getters['delegates/delegates'].filter(
         d => d.address === address
       ).length > 0
     )
@@ -13,13 +13,13 @@ const methods = {
 
   isDelegateByPublicKey(publicKey) {
     return (
-      this.$store.getters['delegates/delegates'].filter(
+      store.getters['delegates/delegates'].filter(
         d => d.publicKey === publicKey
       ).length > 0
     )
   },
 
-  readableTimestamp(value) {
+  readableTimestamp(value, timeZoneOffset) {
     return moment()
       .utc()
       .set({
@@ -30,30 +30,52 @@ const methods = {
         minute: 0,
         second: 0,
       })
-      .add(Math.abs(new Date().getTimezoneOffset()), 'minutes')
+      .add(Math.abs(typeof timeZoneOffset !== 'undefined' ? timeZoneOffset : new Date().getTimezoneOffset()), 'minutes')
       .add(value, 'seconds')
       .format('DD.MM.YYYY HH:mm:ss')
   },
 
-  readableTimestampAgo(value) {
-    return moment()
-      .utc()
-      .set({
-        year: 2018,
-        month: 1,
-        date: 1,
-        hour: 0,
-        minute: 0,
-        second: 0,
-      })
-      .add(value, 'seconds')
-      .fromNow()
+  readableTimestampAgo(time, compareTime) {
+    const getTime = function (t) {
+      return moment()
+        .utc()
+        .set({
+          year: 2018,
+          month: 1,
+          date: 1,
+          hour: 0,
+          minute: 0,
+          second: 0,
+        })
+        .add(t, 'seconds')
+    }
+
+    const momentTime = getTime(time)
+    return typeof compareTime !== 'undefined' ? momentTime.from(getTime(compareTime)) : momentTime.fromNow()
   },
 
-  truncate(value, length = 12) {
-    return (value.length > length)
-      ? `${value.slice(0, 5)}...${value.slice(value.length - 5)}`
-      : value
+  truncate(value, length = 13, truncateWhere = 'middle') {
+    switch (truncateWhere) {
+      case 'left':
+        return (value.length > length)
+          ? `...${value.slice(value.length - length + 3)}`
+          : value
+
+      case 'middle':
+        const odd = length % 2
+        const truncationLength = Math.floor((length - 1) / 2)
+        return (value.length > length)
+          ? `${value.slice(0, truncationLength - odd)}...${value.slice(value.length - truncationLength + 1)}`
+          : value
+
+      case 'right':
+        return (value.length > length)
+          ? `${value.slice(0, length - 3)}...`
+          : value
+
+      default:
+        return value
+    }
   },
 
   rawCurrency(value, currencyName) {
@@ -101,12 +123,14 @@ const methods = {
       })
   },
 
-  readableCrypto(value, appendCurrency = true) {
-    value = (value /= Math.pow(10, 8)).toLocaleString(undefined, {
-      maximumFractionDigits: 8,
-    })
+  readableCrypto(value, appendCurrency = true, decimals = 8) {
+    if (typeof value !== 'undefined') {
+      value = (value /= Math.pow(10, 8)).toLocaleString(undefined, {
+        maximumFractionDigits: decimals,
+      })
 
-    return appendCurrency ? `${value} ${store.getters['network/symbol']}` : value
+      return appendCurrency ? `${value} ${store.getters['network/symbol']}` : value
+    }
   },
 
   networkToken() {
@@ -115,6 +139,18 @@ const methods = {
 
   capitalize(value) {
     return value.charAt(0).toUpperCase() + value.slice(1)
+  },
+  percentageString(value, decimals = 2) {
+    if (typeof value !== 'undefined') {
+      value = value.toLocaleString(undefined, {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      })
+
+      return value + '%'
+    }
+
+    return '-'
   },
 }
 
