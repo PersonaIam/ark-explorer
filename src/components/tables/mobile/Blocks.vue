@@ -1,5 +1,6 @@
 <template>
   <div>
+    <loader :data="blocks">
     <div v-for="block in blocks" :key="block.id" class="row-mobile">
       <div class="list-row-border-b">
         <div>{{ $t("ID") }}</div>
@@ -35,7 +36,11 @@
         <div>{{ $t("Fee (token)", {token: networkToken()}) }}</div>
         <div>{{ readableCrypto(block.totalFee) }}</div>
       </div>
-    </div>
+
+      <div v-if="blocks && !blocks.length" class="px-5 md:px-10">
+        <span>{{ $t("No Results") }}</span>
+      </div>
+    </loader>
   </div>
 </template>
 
@@ -43,7 +48,7 @@
 export default {
   props: {
     blocks: {
-      type: Array,
+      // type: Array or null
       required: true,
     }
   }
