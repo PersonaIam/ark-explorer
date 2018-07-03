@@ -93,16 +93,9 @@ If you discover a security vulnerability within this package, please send an e-m
 ## 8. Contributing
 
 * If you find any bugs, submit an [issue](../../issues) or open a [pull-request](../../pulls), helping us catch and fix them.
-* Engage with other users and developers on [ARK Slack](https://ark.io/slack/).
-* Join our [gitter](https://gitter.im/ark-developers/Lobby).
-* [Contribute bounties](https://github.com/ArkEcosystem/ARK-Bounty-Program).
+* Engage with other users and developers on [Persona Slack](https://personablockchain.slack.com/).
 
 ## 9. Credits
-
-- [Brian Faust](https://github.com/faustbrian)
-- [Lúcio Rubens](https://github.com/luciorubeens)
-- [Alex Barnsley](https://github.com/alexbarnsley)
-- [All Contributors](../../contributors)
 
 ## 10. License
 

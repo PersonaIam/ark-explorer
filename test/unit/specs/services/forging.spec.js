@@ -62,7 +62,7 @@ describe('Forging Service', () => {
 
   it('should return a correct epoch stamp', () => {
     const data = forgingService.epochStamp(123456789)
-    expect(data).toEqual(new Date('2021-02-17T10:33:09.000Z'))
+    expect(data).toEqual(new Date('2021-12-30T21:33:09.000Z'))
   })
 
   it('should return the correct round', () => {

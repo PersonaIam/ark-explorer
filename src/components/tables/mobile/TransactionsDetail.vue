@@ -58,6 +58,7 @@
       <div v-if="transactions && !transactions.length" class="px-5 md:px-10">
         <span>{{ $t("No Results") }}</span>
       </div>
+      </div>
     </loader>
   </div>
 </template>
