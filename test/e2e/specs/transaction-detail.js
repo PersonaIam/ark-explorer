@@ -7,7 +7,7 @@
 module.exports = {
   // Default test, which also serves as setup for correct url
   'transaction detail page should be available': function (browser) {
-    const devServer = browser.globals.devServerURL + '/#/transaction/818c157383c814a353efbfbbdd3dccabb13cb35e156bb70d31e77248166657a7'
+    const devServer = browser.globals.devServerURL + '/#/transaction/2ca0cb1c86eae8cbcfbc7d0be6f99c2dcdd215ce5e8d53506420c75ebf1e5bc2'
 
     browser
       .url(devServer)
@@ -32,11 +32,11 @@ module.exports = {
       .pause(500)
     browser
       .waitForElementVisible("//h1[text() = 'Wallet Summary']")
-      .assert.urlContains('wallets/AFrPtEmzu6wdVpa2CnRDEKGQQMWgq8nE9V')
+      .assert.urlContains('wallets/PAWrTq8BhidJHGQYzfEAEWbvh4h9mi5D1U')
   },
 
   'it should be possible to click on the recipient': function(browser) {
-    const devServer = browser.globals.devServerURL + '/#/transaction/818c157383c814a353efbfbbdd3dccabb13cb35e156bb70d31e77248166657a7'
+    const devServer = browser.globals.devServerURL + '/#/transaction/2ca0cb1c86eae8cbcfbc7d0be6f99c2dcdd215ce5e8d53506420c75ebf1e5bc2'
 
     browser
       .url(devServer)
@@ -49,11 +49,11 @@ module.exports = {
       .pause(500)
     browser
       .waitForElementVisible("//h1[text() = 'Wallet Summary']")
-      .assert.urlContains('wallets/ATJDMLxBXPxn9bss911HTFCp9PhBHih9uL')
+      .assert.urlContains('wallets/PKW4qCmoSAXqZ7RT85evygww9Uh8e8Fk16')
   },
 
   'it should be possible to click on the transaction block id': function(browser) {
-    const devServer = browser.globals.devServerURL + '/#/transaction/818c157383c814a353efbfbbdd3dccabb13cb35e156bb70d31e77248166657a7'
+    const devServer = browser.globals.devServerURL + '/#/transaction/2ca0cb1c86eae8cbcfbc7d0be6f99c2dcdd215ce5e8d53506420c75ebf1e5bc2'
 
     browser
       .url(devServer)

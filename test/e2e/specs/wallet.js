@@ -7,7 +7,7 @@
 module.exports = {
   // Default test, which also serves as setup for correct url
   'wallet summary page should be available': function (browser) {
-    const devServer = browser.globals.devServerURL + '/#/wallets/AYCTHSZionfGoQsRnv5gECEuFWcZXS38gs'
+    const devServer = browser.globals.devServerURL + '/#/wallets/PFR4wJPfgVBoDJyfoXPKa6kph5HJKHykx4'
 
     browser
       .url(devServer)
@@ -70,7 +70,7 @@ module.exports = {
   },
 
   'it should show who the wallet voted for': function (browser) {
-    const devServer = browser.globals.devServerURL + '/#/wallets/ATsPMTAHNsUwKedzNpjTNRfcj1oRGaX5xC'
+    const devServer = browser.globals.devServerURL + '/#/wallets/PCrVaimPEQzY49PvL8TbYUH1EHFdeeYoEB'
 
     browser
       .url(devServer)

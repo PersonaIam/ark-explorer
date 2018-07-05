@@ -38,17 +38,18 @@ module.exports = {
   },
 
   // Header tests
-  'header should be able to toggle chart': function(browser) {
-    browser
-      .assert.visible('#line-chart')
-      .waitForElementVisible('button.text-chart-active')
-      .click('button.text-chart-active')
-      .waitForElementNotPresent('#line-chart')
-    browser
-      .waitForElementVisible('button.text-chart-inactive')
-      .click('button.text-chart-inactive')
-      .waitForElementVisible('#line-chart')
-  },
+  // line chart is disabled for now
+  // 'header should be able to toggle chart': function(browser) {
+  //   browser
+  //     .assert.visible('#line-chart')
+  //     .waitForElementVisible('button.text-chart-active')
+  //     .click('button.text-chart-active')
+  //     .waitForElementNotPresent('#line-chart')
+  //   browser
+  //     .waitForElementVisible('button.text-chart-inactive')
+  //     .click('button.text-chart-inactive')
+  //     .waitForElementVisible('#line-chart')
+  // },
 
   'header should be able to toggle theme': function(browser) {
     browser
@@ -64,29 +65,30 @@ module.exports = {
     browser.assert.cssClassPresent('main', 'theme-light')
   },
 
-  'header should be able to change currency': function(browser) {
-    browser.useXpath().click("//button[contains(., 'ARK/USD')]")
-    browser
-      .useCss()
-      .assert.visible('.menu-button')
-      .assert.visible('.close-button')
-    browser
-      .useXpath()
-      .click("//button[contains(., 'ETH')]")
-      .waitForElementVisible("//button[contains(., 'ARK/ETH')]")
-    browser
-      .click("//button[contains(., 'ARK/ETH')]")
-      .useCss().waitForElementVisible('.close-button')
-    browser
-      .useXpath()
-      .click("//button[contains(., 'USD')]")
-      .waitForElementVisible("//button[contains(., 'ARK/USD')]")
-    browser
-      .useCss()
-      .expect.element('.menu-button').to.not.be.present
-    browser
-      .expect.element('.close-button').to.not.be.present
-  },
+  // no currency YET
+  // 'header should be able to change currency': function(browser) {
+  //   browser.useXpath().click("//button[contains(., 'ARK/USD')]")
+  //   browser
+  //     .useCss()
+  //     .assert.visible('.menu-button')
+  //     .assert.visible('.close-button')
+  //   browser
+  //     .useXpath()
+  //     .click("//button[contains(., 'ETH')]")
+  //     .waitForElementVisible("//button[contains(., 'ARK/ETH')]")
+  //   browser
+  //     .click("//button[contains(., 'ARK/ETH')]")
+  //     .useCss().waitForElementVisible('.close-button')
+  //   browser
+  //     .useXpath()
+  //     .click("//button[contains(., 'USD')]")
+  //     .waitForElementVisible("//button[contains(., 'ARK/USD')]")
+  //   browser
+  //     .useCss()
+  //     .expect.element('.menu-button').to.not.be.present
+  //   browser
+  //     .expect.element('.close-button').to.not.be.present
+  // },
 
   // Footer tests
   'footer should contain links': function(browser) {
@@ -181,7 +183,7 @@ module.exports = {
     browser
       .useXpath()
       .waitForElementVisible("//h1[text() = 'Wallet Summary']")
-      .assert.urlContains('/wallets/AYCTHSZionfGoQsRnv5gECEuFWcZXS38gs')
+      .assert.urlContains('/wallets/PFR4wJPfgVBoDJyfoXPKa6kph5HJKHykx4')
   },
 
   'it should be possible to search for a delegate': function (browser) {
@@ -212,12 +214,12 @@ module.exports = {
     browser
       .click('input#search')
       .waitForElementVisible('input.search-input')
-      .setValue('input.search-input', ['AUDud8tvyVZa67p3QY7XPRUTjRGnWQQ9Xv', browser.Keys.ENTER])
+      .setValue('input.search-input', ['PKW4qCmoSAXqZ7RT85evygww9Uh8e8Fk16', browser.Keys.ENTER])
       .pause(1000)
     browser
       .useXpath()
       .waitForElementVisible("//h1[text() = 'Wallet Summary']")
-      .assert.urlContains('/wallets/AUDud8tvyVZa67p3QY7XPRUTjRGnWQQ9Xv')
+      .assert.urlContains('/wallets/PKW4qCmoSAXqZ7RT85evygww9Uh8e8Fk16')
   },
 
   'it should be possible to search for a block ID': function (browser) {
@@ -230,12 +232,12 @@ module.exports = {
     browser
       .click('input#search')
       .waitForElementVisible('input.search-input')
-      .setValue('input.search-input', ['13507259488170268466', browser.Keys.ENTER])
+      .setValue('input.search-input', ['5504183060584887263', browser.Keys.ENTER])
       .pause(1000)
     browser
       .useXpath()
       .waitForElementVisible("//h1[text() = 'Block']")
-      .assert.urlContains('/block/13507259488170268466')
+      .assert.urlContains('/block/5504183060584887263')
   },
 
   'it should be possible to search for a transaction ID': function (browser) {
@@ -248,12 +250,12 @@ module.exports = {
     browser
       .click('input#search')
       .waitForElementVisible('input.search-input')
-      .setValue('input.search-input', ['4a169d00de2029110829fad77eebf6fd25751418b47561f05b994750acbd3b13', browser.Keys.ENTER])
+      .setValue('input.search-input', ['2ca0cb1c86eae8cbcfbc7d0be6f99c2dcdd215ce5e8d53506420c75ebf1e5bc2', browser.Keys.ENTER])
       .pause(1000)
     browser
       .useXpath()
       .waitForElementVisible("//h1[text() = 'Transaction']")
-      .assert.urlContains('/transaction/4a169d00de2029110829fad77eebf6fd25751418b47561f05b994750acbd3b13')
+      .assert.urlContains('/transaction/2ca0cb1c86eae8cbcfbc7d0be6f99c2dcdd215ce5e8d53506420c75ebf1e5bc2')
   },
 
   'search should show a notice if nothing could be found': function (browser) {

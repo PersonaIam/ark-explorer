@@ -4,6 +4,8 @@
 
 You can access it at [https://explorer.persona.im/](https://explorer.persona.im/).
 
+[![Build Status](https://img.shields.io/travis/ArkEcosystem/explorer/master.svg?style=flat)](https://travis-ci.org/ArkEcosystem/explorer)
+
 ## Build Setup
 
 ### 1. Clone the repository
