@@ -3,7 +3,7 @@
     <div>
       &copy; Persona.im | {{ year }}. {{ $t("All rights reserved") }} <span class="hidden md:inline-block"> | Version: {{ version }} | Date: {{ date }}</span>
     </div>
-    <div>
+    <div class="text-center">
       <a href="https://www.facebook.com/personablockchain" target="_blank">
         <svg
           viewBox="0 0 24 24"

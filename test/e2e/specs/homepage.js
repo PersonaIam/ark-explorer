@@ -32,7 +32,7 @@ module.exports = {
           browser.assert.ok(elemResult.value.startsWith('Market Cap'))
         })
       })
-      .assert.visible('#line-chart')
+      // .assert.visible('#line-chart') // line chart is disabled for now
       .assert.containsText('div .active-tab', 'Latest Transactions')
       .assert.containsText('div .inactive-tab', 'Latest Blocks')
   },
@@ -178,12 +178,12 @@ module.exports = {
     browser
       .click('input#search')
       .waitForElementVisible('input.search-input')
-      .setValue('input.search-input', ['ARK Bounty', browser.Keys.ENTER])
+      .setValue('input.search-input', ['dr10', browser.Keys.ENTER])
       .pause(1000)
     browser
       .useXpath()
       .waitForElementVisible("//h1[text() = 'Wallet Summary']")
-      .assert.urlContains('/wallets/PFR4wJPfgVBoDJyfoXPKa6kph5HJKHykx4')
+      .assert.urlContains('/wallets/PGz2fowUDZbm9zJ42Vu5Af4yYH1YPKAKwN')
   },
 
   'it should be possible to search for a delegate': function (browser) {
@@ -196,12 +196,12 @@ module.exports = {
     browser
       .click('input#search')
       .waitForElementVisible('input.search-input')
-      .setValue('input.search-input', ['genesis_1', browser.Keys.ENTER])
+      .setValue('input.search-input', ['persona.lounge', browser.Keys.ENTER])
       .pause(1000)
     browser
       .useXpath()
       .waitForElementVisible("//h1[text() = 'Wallet Summary']")
-      .assert.urlContains('/wallets/AeLpRK8rFVtBeyBVqBtdQpWDfLzaiNujKr')
+      .assert.urlContains('/wallets/PAkW812RDZmMHph83Jac9WDpy9cBHbFsTD')
   },
 
   'it should be possible to search for an address': function (browser) {

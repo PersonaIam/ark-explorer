@@ -26,30 +26,39 @@ module.exports = {
   },
 
   'it should be possible to click on the sender': function(browser) {
-    browser
-      .useXpath()
-      .click("//div/div[contains(@class, 'list-row')][1]//a[1]")
-      .pause(500)
-    browser
-      .waitForElementVisible("//h1[text() = 'Wallet Summary']")
-      .assert.urlContains('wallets/PAWrTq8BhidJHGQYzfEAEWbvh4h9mi5D1U')
-  },
-
-  'it should be possible to click on the recipient': function(browser) {
     const devServer = browser.globals.devServerURL + '/#/transaction/2ca0cb1c86eae8cbcfbc7d0be6f99c2dcdd215ce5e8d53506420c75ebf1e5bc2'
 
     browser
       .url(devServer)
       .useCss()
       .waitForElementVisible('main.theme-light')
-      .waitForElementVisible('.list-row-border-b')
+      .waitForElementVisible('h1')
     browser
       .useXpath()
-      .click("//div/div[contains(@class, 'list-row')][2]//a[1]")
+      .click("//div/div[contains(@class, 'list-row-border-b')][1]//a[1]")
+      .pause(500)
+    browser
+      .waitForElementVisible("//h1[text() = 'Wallet Summary']")
+      .assert.urlContains('wallets/PAWrTq8BhidJHGQYzfEAEWbvh4h9mi5D1U')
+      .end()
+  },
+
+  'it should be possible to click on the recipient': function (browser) {
+    const devServer = browser.globals.devServerURL + '/#/transaction/2ca0cb1c86eae8cbcfbc7d0be6f99c2dcdd215ce5e8d53506420c75ebf1e5bc2'
+
+    browser
+      .url(devServer)
+      .useCss()
+      .waitForElementVisible('main.theme-light')
+      .waitForElementVisible('h1')
+    browser
+      .useXpath()
+      .click("//div/div[contains(@class, 'list-row-border-b')][2]//a[1]")
       .pause(500)
     browser
       .waitForElementVisible("//h1[text() = 'Wallet Summary']")
       .assert.urlContains('wallets/PKW4qCmoSAXqZ7RT85evygww9Uh8e8Fk16')
+      .end()
   },
 
   'it should be possible to click on the transaction block id': function(browser) {
@@ -59,14 +68,14 @@ module.exports = {
       .url(devServer)
       .useCss()
       .waitForElementVisible('main.theme-light')
-      .waitForElementVisible('.list-row-border-b')
+      .waitForElementVisible('h1')
     browser
       .useXpath()
       .click("//div/div[contains(@class, 'list-row')][8]//a[1]")
       .pause(500)
     browser
       .waitForElementVisible("//h1[text() = 'Block']")
-      .assert.urlContains('block/12374209887221238137')
+      .assert.urlContains('block/11547148810010064379')
       .end()
   }
 }
