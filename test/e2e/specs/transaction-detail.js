@@ -35,7 +35,7 @@ module.exports = {
       .waitForElementVisible('h1')
     browser
       .useXpath()
-      .click("//div/div[contains(@class, 'list-row-border-b')][1]//a[1]")
+      .click("//div/div[contains(@class, 'list-row-border')][1]//a[1]")
       .pause(500)
     browser
       .waitForElementVisible("//h1[text() = 'Wallet Summary']")
