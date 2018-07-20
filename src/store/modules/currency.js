@@ -3,9 +3,9 @@ import * as types from '../mutation-types'
 export default {
   namespaced: true,
   state: {
-    name: 'ARK',
+    name: 'PERSONA',
     rate: 1,
-    symbol: 'Ѧ'
+    symbol: 'P'
   },
   mutations: {
     [types.SET_CURRENCY_NAME](state, payload) {

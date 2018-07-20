@@ -1,6 +1,7 @@
-import Vue from 'vue'
-import moment from 'moment'
-import store from '@/store'
+import Vue from 'vue';
+import moment from 'moment';
+import store from '@/store';
+import { EPOCH_BASE } from '../globals';
 
 const methods = {
   isDelegateByAddress(address) {
@@ -20,21 +21,18 @@ const methods = {
   },
 
   readableTimestamp(value, timeZoneOffset) {
+    const origin = window.location.origin.toLowerCase()
+    const epochBaseKey = origin.includes('testnet') ? 'TESTNET' : 'MAINNET'
+
+    console.log('selected base', epochBaseKey, EPOCH_BASE[epochBaseKey])
+
     return moment()
       .utc()
-      .set({
-        year: 2018,
-        month: 1,
-        date: 1,
-        hour: 0,
-        minute: 0,
-        second: 0,
-      })
+      .set(EPOCH_BASE[epochBaseKey])
       .add(Math.abs(typeof timeZoneOffset !== 'undefined' ? timeZoneOffset : new Date().getTimezoneOffset()), 'minutes')
       .add(value, 'seconds')
       .format('DD.MM.YYYY HH:mm:ss')
   },
-
 
   readableTimestampAgo(value) {
     return moment()
