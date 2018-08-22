@@ -21,10 +21,7 @@ const methods = {
   },
 
   readableTimestamp(value, timeZoneOffset) {
-    const origin = window.location.origin.toLowerCase()
-    const epochBaseKey = origin.includes('testnet') ? 'TESTNET' : 'MAINNET'
-
-    console.log('selected base', epochBaseKey, EPOCH_BASE[epochBaseKey])
+    const epochBaseKey = process.env.EXPLORER_CONFIG === 'mainnet' ? 'MAINNET' : 'TESTNET'
 
     return moment()
       .utc()
