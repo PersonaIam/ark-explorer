@@ -1,6 +1,6 @@
 {
   "title": "Testnet Explorer",
-  "server": "http://5.135.75.68:4101/api",
+  "server": "https://testnet-explorer.persona.im:4443/api",
   "alias": "Testnet",
   "activeDelegates": 51,
   "rewardOffset": 151200,
