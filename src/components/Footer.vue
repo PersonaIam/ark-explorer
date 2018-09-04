@@ -50,17 +50,6 @@
         </svg>
       </a>
 
-      <a href="https://gitter.im/ark-developers/Lobby" target="_blank">
-        <svg
-          viewBox="0 0 24 24"
-          class="m-2"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          width="16px" height="16px">
-          <path fill-rule="evenodd" fill="currentColor" d="M8.501 4.001H10.5V24H8.501V4.001zm6.999 0V24h-2V4.001h2zM3.5 0h2.001v15H3.5V0zm15 4.001h2V15h-2V4.001z" />
-        </svg>
-      </a>
-
       <a href="https://t.me/personablockchain" target="_blank">
         <svg
           viewBox="0 0 24 24"
@@ -72,7 +61,7 @@
         </svg>
       </a>
 
-      <a href="https://blog.ark.io" target="_blank">
+      <a href="https://medium.com/personablockchain" target="_blank">
         <svg
           viewBox="0 0 24 24"
           class="m-2"
