@@ -1,6 +1,6 @@
 {
   "title": "Persona Explorer",
-  "server": "https://www.geops.net:4442/api",
+  "server": "http://89.40.7.63:4102/api",
   "alias": "Main",
   "activeDelegates": 51,
   "rewardOffset": 151200,
