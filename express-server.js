@@ -17,7 +17,7 @@ if (fs.existsSync(distPath)) {
   app.get('/', function (req, res) {
     res.render(path.join(distPath + '/index.html'))
   })
-  const server = https.createServer({ ... }, app).listen(443);
+  const server = https.createServer({}, app).listen(443);
 } else {
     throw new Error('No Dist Path - please build')
 }
