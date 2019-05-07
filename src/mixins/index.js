@@ -102,6 +102,7 @@ const methods = {
     }
 
     const cryptos = {
+      'PRSN': 'PRSN',
       'ARK': 'Ѧ',
       'BTC': 'Ƀ',
       'ETH': 'Ξ',

@@ -36,7 +36,7 @@ export default {
       if (this.height < this.rewardOffset) {
         this.forged = 0
       } else {
-        this.forged = (this.height - this.rewardOffset) * 2 * 1e8
+        this.forged = (this.height - this.rewardOffset) * 8 * 1e8
       }
     }
   }

@@ -3,7 +3,7 @@
     <button
       v-for="(symbol, currency) in currencies"
       :key="currency"
-      class="menu-button"
+      class="flex items-center p-4 border-b-2 border-transparent hover:border-blue"
       @click="setCurrency(currency, symbol)"
     >
       <a href="#">{{ currency }}</a>

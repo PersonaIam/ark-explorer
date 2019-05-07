@@ -1,23 +1,17 @@
-# Ark Explorer 3.0
-
-<p align="center">
-    <img src="/ARKExplorer.png" />
-</p>
+# Persona Explorer 3.0
 
 > Designed and developed from the ground-up, using lean & fast developmental frameworks (Tailwind CSS & Vue.JS).
 
-[![Build Status](https://badgen.now.sh/circleci/github/ArkEcosystem/explorer)](https://circleci.com/gh/ArkEcosystem/explorer)
-[![Codecov](https://badgen.now.sh/codecov/c/github/arkecosystem/explorer)](https://codecov.io/gh/arkecosystem/explorer)
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
-You can access it at [https://explorer.ark.io/](https://explorer.ark.io/).
+You can access it at [https://explorer.persona.im/](https://explorer.persona.im/).
 
 ## Build Setup
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/ArkEcosystem/explorer
+git clone https://github.com/PersonaIam/persona-explorer
 ```
 
 ### 2. Install Dependencies
@@ -53,10 +47,6 @@ If you are going to host your explorer instance on GitHub Pages you will need to
 ```bash
 yarn build --base https://username.github.io/repository/
 ```
-
-A running instance of the explorer on GitHub Pages can be found at https://arkecosystem.github.io/.
-
-> This step is not required if you are hosting the explorer on your "root" repository which is usually your username https://username.github.io/.
 
 #### 3.5 Run Express Server
 
@@ -117,9 +107,7 @@ If you discover a security vulnerability within this package, please send an e-m
 ## Contributing
 
 * If you find any bugs, submit an [issue](../../issues) or open a [pull-request](../../pulls), helping us catch and fix them.
-* Engage with other users and developers on the [ArkEcosystem Slack](https://ark.io/slack/).
-* Join our [gitter](https://gitter.im/ark-developers/Lobby).
-* [Contribute bounties](https://github.com/ArkEcosystem/bounty-program).
+* Engage with other users and developers on the [Persona Slack](https://personablockchain.slack.com/).
 
 ## Credits
 
