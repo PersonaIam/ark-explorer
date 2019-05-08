@@ -1,6 +1,6 @@
 {
   "title": "Persona Explorer",
-  "server": "http://89.40.7.63:4102/api",
+  "server": "https://explorer.persona.im:8443/api/v2",
   "alias": "Main",
   "activeDelegates": 51,
   "rewardOffset": 151200,
