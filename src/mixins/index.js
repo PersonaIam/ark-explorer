@@ -109,7 +109,7 @@ const methods = {
       'LTC': 'Ł'
     }
 
-    return [store.getters['network/token'], 'BTC', 'ETH', 'LTC'].some(
+    return [store.getters['network/token'], 'PRSN', 'BTC', 'ETH', 'LTC'].some(
       c => currencyName.indexOf(c) > -1
     )
       ? `${value.toLocaleString(locale, {
