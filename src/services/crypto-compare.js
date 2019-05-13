@@ -5,11 +5,11 @@ import store from '@/store'
 const SECONDS_PER_DAY = 86400
 
 class CryptoCompareService {
+  // only USD conversion for now
   async price (currency) {
-    const response = await axios.get(`https://min-api.cryptocompare.com/data/price?fsym=ARK&tsyms=${currency}`)
-    if (response.data.hasOwnProperty(currency)) {
-      return Number(response.data[currency])
-    }
+    const response = await axios.get(`https://api.coingecko.com/api/v3/coins/persona`)
+    return response.data.market_data.current_price.usd
+
   }
 
   async day () {
@@ -42,7 +42,7 @@ class CryptoCompareService {
     }
 
     const response = await axios
-      .get(`https://min-api.cryptocompare.com/data/histo${type}`, {
+      .get(`https://api.coingecko.com/api/v3/coins/persona`, {
         params: {
           fsym: token,
           tsym: targetCurrency,
@@ -87,7 +87,7 @@ class CryptoCompareService {
     }
 
     const response = await axios
-      .get('https://min-api.cryptocompare.com/data/dayAvg', {
+      .get('https://api.coingecko.com/api/v3/coins/persona', {
         params: {
           fsym: token,
           tsym: targetCurrency,

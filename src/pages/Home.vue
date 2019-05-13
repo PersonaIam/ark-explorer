@@ -2,13 +2,6 @@
   <div class="max-w-2xl mx-auto md:pt-5">
     <ContentHeader>{{ $t("Latest transactions and blocks") }}</ContentHeader>
 
-    <section
-      v-if="priceChart"
-      class="hidden md:block mb-5 bg-theme-feature-background xl:rounded-lg"
-    >
-      <ChartWrapper />
-    </section>
-
     <section class="page-section py-5 md:py-10">
       <div class="flex flex-col sm:flex-row items-center mx-5 sm:mx-0 mb-4 sm:mb-8">
         <nav

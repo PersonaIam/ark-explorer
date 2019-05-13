@@ -14,8 +14,11 @@
         <div :class="{ 'pr-6': isMain }">
           {{ $t("Supply") }}: <span class="whitespace-no-wrap">{{ readableCrypto(supply, true, 0) }}</span>
         </div>
-        <div v-if="isMain">
-          {{ $t("Market Cap") }}: <Currency :amount="+supply" />
+        <div class="pr-6">
+          {{ $t("Market Cap") }}: <span class="whitespace-no-wrap">{{ readableCurrency(supply, null, 'usd', true) }}</span>
+        </div>
+        <div class="pr-6">
+          {{ $t("Price") }}: <span class="whitespace-no-wrap">{{ '$' + readablePrice('usd') }}</span>
         </div>
       </div>
     </div>

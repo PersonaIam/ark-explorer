@@ -112,10 +112,10 @@ export default {
     },
 
     async updateCurrencyRate () {
-      if (this.currencyName !== this.token) {
+
         const rate = await CryptoCompareService.price(this.currencyName)
         this.$store.dispatch('currency/setRate', rate)
-      }
+
     },
 
     async updateSupply () {
@@ -144,7 +144,7 @@ export default {
     initialiseTimers () {
       this.currencyTimer = setInterval(() => {
         this.updateCurrencyRate()
-      }, 5 * 60 * 1000)
+      }, 5 * 30 * 1000)
 
       this.networkTimer = setInterval(() => {
         this.updateSupply()

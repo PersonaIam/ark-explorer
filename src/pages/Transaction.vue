@@ -30,7 +30,7 @@
           <div class="mr-6 flex-none">
             <img
               class="block"
-              src="@/assets/images/icons/transaction.svg"
+              src="@/assets/images/icons/clock.svg"
             >
           </div>
           <div class="flex-auto min-w-0">

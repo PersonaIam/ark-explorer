@@ -94,9 +94,8 @@ const methods = {
 
   readableCurrency (value, rate = null, currency = null, normalise = true) {
     const currencyName = currency || store.getters['currency/name']
-
     value *= rate || store.getters['currency/rate']
-
+    
     if (normalise) {
       value /= 1e8
     }
@@ -120,6 +119,12 @@ const methods = {
         currency: currencyName
       })
   },
+
+readablePrice (currency = null) {
+    
+    return store.getters['currency/rate'];
+  },
+
 
   readableCrypto (value, appendCurrency = true, decimals = 8) {
     if (typeof value !== 'undefined') {
